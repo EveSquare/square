@@ -1,4 +1,4 @@
-import { Layer, Line, Rect, RegularPolygon, Shape, Stage } from "react-konva";
+import { Layer, Rect, Stage } from "react-konva";
 
 function App() {
   return (
