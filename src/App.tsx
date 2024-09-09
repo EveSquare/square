@@ -1,17 +1,24 @@
-import { Layer, Rect, Stage } from "react-konva";
+import { Layer, Rect, Shape, Stage } from "react-konva";
 
 function App() {
   return (
     <>
       <Stage width={300} height={200}>
         <Layer>
-          <Rect
-            x={20}
-            y={20}
-            width={100}
-            height={100}
-            fill="red"
-            shadowBlur={10}
+          <Shape
+            sceneFunc={(context, shape) => {
+              context.beginPath();
+              context.moveTo(100, 150);
+              context.lineTo(150, 200);
+              context.lineTo(200, 150);
+              context.lineTo(150, 100);
+              context.closePath();
+              // 不規則な星形のポイントを追加するためのコードをここに記述
+              context.fillStrokeShape(shape);
+            }}
+            fill="#000"
+            stroke="white"
+            strokeWidth={4}
           />
         </Layer>
       </Stage>
